@@ -1,0 +1,29 @@
+[
+  {
+    "id": "getting-started-with-fabric",
+    "title": "Getting Started with Microsoft Fabric",
+    "date": "2025-12-15",
+    "preview": "An introduction to Microsoft Fabric and how it unifies data analytics workloads into a single platform for data professionals.",
+    "content": "## Getting Started with Microsoft Fabric\n\nMicrosoft Fabric is an all-in-one analytics solution that brings together data engineering, data integration, data warehousing, data science, real-time analytics, and business intelligence.\n\n### Why Fabric?\n\nFabric simplifies the analytics landscape by providing a unified platform. Instead of managing separate services, you get a single, integrated experience.\n\n### Key Components\n\n- **Data Factory** — Data integration and ETL/ELT pipelines\n- **Synapse Data Engineering** — Big data engineering with Spark\n- **Synapse Data Warehouse** — Enterprise data warehousing\n- **Power BI** — Business intelligence and reporting\n- **Data Activator** — Real-time event processing\n\n### Getting Started\n\n1. Sign up for a Fabric trial at [fabric.microsoft.com](https://fabric.microsoft.com)\n2. Create a workspace\n3. Start with a Lakehouse to organize your data\n4. Build pipelines to ingest data\n5. Create reports with Power BI\n\nFabric is a game-changer for data professionals looking to streamline their workflows.",
+    "tags": ["Microsoft Fabric", "Data Engineering", "Analytics"],
+    "source": "manual"
+  },
+  {
+    "id": "power-bi-best-practices",
+    "title": "Power BI Dashboard Best Practices",
+    "date": "2025-10-20",
+    "preview": "Key principles for designing effective Power BI dashboards that drive business decisions and provide actionable insights.",
+    "content": "## Power BI Dashboard Best Practices\n\nCreating effective dashboards requires both technical skill and design thinking. Here are the principles I follow:\n\n### 1. Know Your Audience\n\nBefore building anything, understand who will use the dashboard and what decisions they need to make.\n\n### 2. Keep It Simple\n\n- Use no more than 5-7 visuals per page\n- Avoid chart junk and unnecessary decorations\n- Use consistent color schemes\n\n### 3. Performance Optimization\n\n- Use import mode when possible\n- Minimize calculated columns; prefer measures\n- Use summary tables for large datasets\n\n### 4. DAX Best Practices\n\n- Use variables for readability\n- Prefer CALCULATE over nested filters\n- Document complex measures\n\n### 5. Design Principles\n\n- Follow the Z-pattern for layout\n- Put the most important KPIs at the top\n- Use tooltips for additional detail\n- Ensure mobile responsiveness\n\nGreat dashboards tell a story. Every visual should have a purpose.",
+    "tags": ["Power BI", "Data Visualization", "Best Practices"],
+    "source": "manual"
+  },
+  {
+    "id": "sql-optimization-tips",
+    "title": "SQL Query Optimization Tips for Data Engineers",
+    "date": "2025-08-05",
+    "preview": "Practical tips for writing efficient SQL queries that scale well with large datasets in production environments.",
+    "content": "## SQL Query Optimization Tips\n\nAs data volumes grow, writing efficient SQL becomes critical. Here are techniques I use daily:\n\n### Indexing Strategy\n\n- Create indexes on columns used in WHERE, JOIN, and ORDER BY\n- Use composite indexes for multi-column queries\n- Avoid over-indexing — each index has a write cost\n\n### Query Patterns\n\n- **Avoid SELECT ***: Only fetch the columns you need\n- **Use EXISTS over IN** for subqueries with large result sets\n- **Prefer JOINs over correlated subqueries**\n- **Use CTEs** for readable, maintainable queries\n\n### Execution Plans\n\nAlways check the execution plan before deploying queries to production. Look for:\n- Table scans (should be index seeks)\n- Sort operations (may need indexes)\n- Hash joins on large tables\n\n### Common Antipatterns\n\n1. Functions on indexed columns in WHERE clauses\n2. Implicit type conversions\n3. Using DISTINCT to fix duplicate rows from bad JOINs\n4. Not using parameterized queries\n\nMastering SQL optimization is an ongoing journey. Profile, measure, and iterate.",
+    "tags": ["SQL", "Data Engineering", "Performance"],
+    "source": "manual"
+  }
+]
