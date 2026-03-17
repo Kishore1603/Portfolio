@@ -109,18 +109,18 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex items-center justify-center gap-4 mb-12"
         >
-          <a
-            href="#projects"
+          <button
+            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             className="px-8 py-3 bg-primary-600 hover:bg-primary-500 text-white font-medium rounded-lg transition-all hover:shadow-lg hover:shadow-primary-600/25"
           >
             View Projects
-          </a>
-          <a
-            href="#contact"
+          </button>
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="px-8 py-3 border border-dark-600 hover:border-dark-500 text-dark-200 hover:text-white rounded-lg transition-all"
           >
             Get in Touch
-          </a>
+          </button>
         </motion.div>
 
         {/* Social Links */}
