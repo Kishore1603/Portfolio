@@ -6,13 +6,13 @@ const certifications = [
   {
     title: "Microsoft Certified: Fabric Analytics Engineer Associate",
     issuer: "Microsoft",
-    link: "", // To be added later
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/kishorekumar-6674/D6B74B3D41654D17?sharingId=69731502CC9521C0", // To be added later
     badge: "DP-600",
   },
   {
     title: "Microsoft Certified: Fabric Data Engineer Associate",
     issuer: "Microsoft",
-    link: "", // To be added later
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/kishorekumar-6674/D0F9C0DF541A7CCE?sharingId=69731502CC9521C0", // To be added later
     badge: "DP-700",
   },
 ];
