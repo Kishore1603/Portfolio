@@ -3,14 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Database } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Projects", href: "#projects" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Education", id: "education" },
+  { label: "Certifications", id: "certifications" },
+  { label: "Projects", id: "projects" },
+  { label: "Blog", id: "blog" },
+  { label: "Contact", id: "contact" },
 ];
+
+// Smooth-scrolls to a section by id without touching the URL hash
+// (avoids conflict with HashRouter which owns the # character)
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,20 +55,20 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <button
+                key={link.id}
+                onClick={() => scrollTo(link.id)}
                 className="px-3 py-2 text-sm text-dark-300 hover:text-white transition-colors rounded-lg hover:bg-dark-800/50"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
-            <a
-              href="#contact"
+            <button
+              onClick={() => scrollTo("contact")}
               className="ml-3 px-5 py-2 text-sm font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
             >
               Hire Me
-            </a>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -87,22 +93,20 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-dark-300 hover:text-white hover:bg-dark-800/50 rounded-lg transition-colors"
+                <button
+                  key={link.id}
+                  onClick={() => { scrollTo(link.id); setIsOpen(false); }}
+                  className="block w-full text-left px-4 py-3 text-dark-300 hover:text-white hover:bg-dark-800/50 rounded-lg transition-colors"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 mt-2 text-center font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
+              <button
+                onClick={() => { scrollTo("contact"); setIsOpen(false); }}
+                className="block w-full px-4 py-3 mt-2 text-center font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
               >
                 Hire Me
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
